@@ -1,0 +1,182 @@
+body {
+    background-color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.nunito {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content {
+    margin: 2% 4%;
+}
+
+.progress_bar {
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    height: 15%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0;
+}
+
+.progress_bar_books {
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+    height: 10%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0;
+    margin: 2% 0;
+    font-size: 100%;
+}
+
+.progress_fill_books {
+    background-color: rgb(128, 199, 243);
+    border-radius: 10px;
+    padding: 0.5%;
+}
+
+.progress_fill {
+    background-color: rgb(47, 113, 155);
+    border-radius: 10px;
+    padding: 1%;
+    font-size: 90%;
+    color: white;
+}
+
+.box_dropdown {
+    padding: 1% 3%;
+    width: 100%;
+    justify-content: center;
+    display: block;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+    margin: 5% auto;
+    color: black;
+}
+
+h2 {
+    color: rgb(10, 69, 106);
+    font-weight: bold;
+}
+
+#hidden {
+    padding: 1%;
+    display: none;
+    color: black;
+    font-size: 120%;
+}
+
+:checked+#hidden {
+    display: block;
+    color: black;
+}
+
+.checkbox {
+    display: inline-block;
+    width: 8%;
+    margin: 1% 0;
+    padding: 0;
+    /* background-color: rgb(221, 221, 221); */
+}
+
+input:checked ~ .checkbox{
+    background-color: rgb(128, 199, 243);
+}
+
+/* input:checked ~ label {
+    color: red;
+} */
+
+input[type=checkbox]{
+    font-size: 100%;
+    width: 1.5em;
+    height: 1.5em;
+    accent-color: rgb(128, 199, 243);
+    /* color: red; */
+}
+
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+input:checked ~ .check:after {
+    display: block;
+}
+
+
+.old_new {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.old, .new{
+    width: 40%;
+    padding: 5%;
+    text-align: center;
+}
+
+.old { 
+    float: left;
+}
+
+.new {
+    float: right
+}
+
+.active {
+    border-bottom: solid 4px rgb(10, 69, 106);
+}
+
+.montserrat{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* Tabs */
+
+.t_label + .olid{
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 100%;
+}
+
+.t_label + .new{
+    display: block;
+    float: right;
+    text-align: center;
+    font-size: 100%;
+}
+
+.testaments {
+    >input[type="radio"] {
+        display: block;
+
+        &:checked+.tab_label {
+            /* active tab */
+            background-color: blue;
+        }
+    }
+
+    >input[type="radio"]:not(:checked)+.tab-label+.tab-content {
+        /* hide inactive tabs */
+        display: none;
+    }
+}

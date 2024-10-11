@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Tracker</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body class="nunito">
+    <h1>Bible Tracker App</h1>
+    <div class="content">
+        <h3>Bible progress:</h3>
+        <div class="progress_bar">
+            <div class="progress_fill" style="width: {{total_chapter_count}}%">{{total_chapter_count}}%</div>
+        </div>
+        <h3>Most read books:</h3>
+        <h4>{{most_read}}</h>
+
+        <br><br>
+
+        <!-- <div class="testaments">
+            OLD
+            <input type="radio" id="Old" name="testament" checked>
+            <div class="t_label old">
+                <label for="Old" class="tab_label">
+                    <h3>Old</h3>
+                </label>
+            </div>
+
+            NEW
+            <input type="radio" id="New" name="testament" checked>
+            <div class="t_label new">
+                <label for="New" class="tab_label">
+                    <h3>New</h3>
+                </label>
+            </div>
+        </div> -->
+
+
+
+        {% for book in books %}
+        <div class="book_dropdown">
+            <label for="{{book.name}}">
+                <h2>{{book.name}}</h3>
+            </label>
+            <input type="checkbox" id="{{book.name}}" style="display: none;">
+
+
+            <div id="hidden" class="box_progress">
+                <div class="progress_bar_books">
+                    <div class="progress_fill_books" style="width: {{book.book_chapter_percentage}}%">{{book.book_chapter_percentage}}%</div>
+            </div>
+
+            {% for chapter in book.chapters %}
+            
+            <div class="checkbox">
+            <form id="chapter_read" method="post">
+            {% csrf_token %}
+                <input type="hidden" name="book_id" value="{{book.id}}">
+                <input type="hidden" name="chapter_id" value="{{chapter.number}}">
+                <input type="checkbox" name="isChecked" onClick="form.submit()" {{chapter.chapter_checked}}>
+                <span class="check">{{chapter.number}}</span>
+            </form>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Tracker</title>
+    <link rel="stylesheet" href="styletest.css">
+</head>
+<body class="nunito">
+    <h1>Bible Tracker App</h1>
+    <div class="content">
+        <p>Bible progress:</p>
+        <div class="progress_bar">
+            <div class="progress_fill" style="height:5%; width:50%">50%</div>
+        </div>
+        <br><br>
+
+        <div class="book_dropdown">
+            <label for="genesis">
+                <h2>Genesis</h3>
+            </label>
+            <input type="checkbox" id="genesis" style="display: none;">
+            <div id="hidden" class="box_progress">
+            
+            <!-- {% for chapter in book.name %} -->
+            <div class="checkbox">
+                <input type="checkbox" name="1" value="1">
+                <span class="check">1</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="2" value="1">
+                <span class="check">2</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="3" value="1">
+                <span class="check">3</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" name="4" value="1">
+                <span class="check">4</span>
+            </div>
+            
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
